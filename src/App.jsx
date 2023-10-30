@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonRemoveAll from './components/app/ButtonRemoveAll';
+import ButtonTodo from './components/app/ButtonTodo';
 import Card from './components/app/Card';
 import CurrentDate from './components/app/CurrentDate';
 import { GlobalContext } from './global/GlobalContext';
@@ -32,7 +32,10 @@ const App = () => {
             />
           </div>
         ))}
-        <ButtonRemoveAll text="Remover Tarefas" />
+        <div className="flex gap-16 max-w-lg w-full justify-center sm:gap-0 sm:justify-between flex-wrap">
+          <ButtonTodo text="Limpar Tarefas" type="remove" />
+          <ButtonTodo text="Adicionar Tarefa" type="add" />
+        </div>
       </div>
     </>
   )
