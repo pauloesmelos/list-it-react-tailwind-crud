@@ -12,7 +12,7 @@ const ModalAddTodo = ({ isOpen, setModal }) => {
     flex justify-center items-center
     ${isOpen ? "block" : "hidden"}`}>
         <div className="bg-white w-full h-1/2 p-3 flex justify-center items-center
-        md:w-1/2 rounded-lg relative shadow-lg">
+        md:w-1/2 rounded-lg relative shadow-lg animate-showModal">
             <AiOutlineCloseCircle className="top-0 right-0 mr-1 absolute cursor-pointer
                 text-3xl text-red-500 hover:scale-110 hover:opacity-50 hover:text-black duration-300
                 md:text-4xl"
