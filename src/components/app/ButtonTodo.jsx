@@ -1,18 +1,35 @@
 import React from 'react';
 
-const ButtonTodo = ({ text,type }) => {
+const ButtonTodo = ({ text, type, onClick, attributes }) => {
+  const styleDefault = `p-3 text-white rounded-lg  font-bold hover:scale-105 duration-500 
+  hover:shadow-md mt-5`;
+
   if(type === "remove") {
     return (
-      <button className="p-3 bg-red-400 text-white rounded-lg  font-bold hover:bg-red-500 
-       hover:scale-105 duration-500 hover:shadow-md mt-5 md:rounded-lg">
+      <button 
+        className={`bg-red-400 hover:bg-red-500 ${styleDefault}`}
+        onClick={onClick}
+      >
         {text}
       </button>
     )
   }
-  else {
+  else if(type === "add"){
     return(
-      <button className="p-3 bg-green-400 text-white rounded-lg  font-bold hover:bg-green-500 
-       hover:scale-105 duration-500 hover:shadow-md mt-5">
+      <button 
+        className={`bg-green-400 hover:bg-green-500 ${styleDefault}`}
+        onClick={onClick}
+      >
+        {text}
+      </button>
+    )
+  }
+  else if(type === "edit") {
+    return(
+      <button 
+        className={`bg-green-400 hover:bg-green-500 ${styleDefault} ${attributes}`}
+        onClick={onClick}
+      >
         {text}
       </button>
     )
