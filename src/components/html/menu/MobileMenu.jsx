@@ -18,7 +18,7 @@ const MobileMenu = () => {
         onClick={handleClick}
       />
       <ul className={`p-2 bg-white shadow-lg justify-around items-center top-0 left-0 absolute w-full
-      ${active ? "flex animate-showMenuMobile" : "hidden animate-hiddenMenuMobile"}`}
+      ${active ? "flex animate-showMenuMobile" : "animate-hiddenMenuMobile"}`}
       >
         <ButtonLogin />
         <GrClose 
