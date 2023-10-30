@@ -1,0 +1,43 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Ir caminhar",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Ir correr",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Ir p faculdade",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Ver minha Bubu",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Estágio",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "user": "dudu",
+      "password": 123
+    },
+    {
+      "user": "admin",
+      "password": 123
+    },
+    {
+      "user": "ana zeferino",
+      "password": 123456
+    }
+  ]
+}
