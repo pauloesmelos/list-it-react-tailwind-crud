@@ -4,6 +4,7 @@ import ButtonTodo from './components/app/ButtonTodo';
 import Card from './components/app/Card';
 import CurrentDate from './components/app/CurrentDate';
 import ModalAddTodo from './components/app/ModalAddTodo';
+import Footer from './components/html/footer/Footer';
 import { GlobalContext } from './global/GlobalContext';
 import { GlobalModal } from './global/GlobalModal';
 import useTodoDataDelete from './hooks/useTodoDataDelete';
@@ -57,6 +58,7 @@ const App = () => {
         </div>
       </div>
       <ModalAddTodo value={modal} onClick={handleClick} />
+      <Footer/>
     </>
   )
 }

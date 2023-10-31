@@ -35,7 +35,7 @@ const FormAdd = () => {
             id="descricao"
             type="text"
             value={title}
-            setValue={setTitle}
+            onChange={({ target }) => setTitle(target.value)}
             placeholder="Insira algo aqui"
         />
         <ButtonTodo
