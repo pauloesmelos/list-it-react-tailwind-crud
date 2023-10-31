@@ -12,32 +12,32 @@ export default {
     },
     keyframes: {
       showMenuMobile: {
-        "from": { opacity: "0", transform: "translateX(-5rem)"},
-        "to": { opacity: "1", transform: "translateX(0rem)"}
+        "from": { opacity: 0, transform: "translateX(-30rem)"},
+        "to": { opacity: 1, transform: "translateX(0rem)"}
       },
       showModal: {
         "from": { opacity: "0", transform: "scale(0)"},
         "to": { opacity: "1", transform: "scale(1)"}
       },
-      closeModal: {
-        "from": { opacity: "1", transform: "scale(1)"},
-        "to": { opacity: "0", transform: "scale(0)"}
-      },
       hiddenMenuMobile: {
-        "from": { opacity: "1", transform: "translate3d(0,0,0)"},
-        "to": { opacity: "0", transform: "translate3d(-5rem,0,0)", visibility: "hidden"}
+        "from": { transform: "translateX(0)"},
+        "to": { transform: "translateX(-50rem)", visibility: "hidden"}
       },
       loading: {
         "from": { transform: "rotate(0deg)"},
         "to": { transform: "rotate(360deg)"}
+      },
+      rotate: {
+        "from": { transform: "rotate(0deg)"},
+        "to": { transform: "rotate(180deg)"}
       }
     },
     animation: {
-      showMenuMobile: "showMenuMobile 1s forwards",
+      showMenuMobile: "showMenuMobile .6s forwards",
       loading: "loading 1s linear infinite",
-      hiddenMenuMobile: "hiddenMenuMobile 2s forwards",
+      hiddenMenuMobile: "hiddenMenuMobile 1s forwards",
       showModal: "showModal .6s forwards",
-      closeModal: "closeModal .6s forwards"
+      rotate: "rotate .5s forwards"
     }
   },
   plugins: [

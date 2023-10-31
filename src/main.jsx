@@ -9,6 +9,7 @@ import NavBar from './components/html/nav-bar/NavBar.jsx';
 import Error404 from './components/pages/Error404.jsx';
 import './css/tailwind.css';
 import { GlobalContextData } from './global/GlobalContext.jsx';
+import { GlobalModalProvider } from './global/GlobalModal.jsx';
 
 const client = new QueryClient();
 
@@ -19,13 +20,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <QueryClientProvider client={client}>
         <GlobalContextData>
           <BrowserRouter>
-            <NavBar/>
-            <MobileMenu/>
-            <Routes>
-              <Route path="/" element={<App />} />
-              <Route path="*" element={<Error404 />} />
-            </Routes>
-            <Footer/>
+            <GlobalModalProvider>
+              <NavBar/>
+              <MobileMenu/>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="*" element={<Error404 />} />
+              </Routes>
+              <Footer/>
+            </GlobalModalProvider>
           </BrowserRouter>
         </GlobalContextData>
       </QueryClientProvider>

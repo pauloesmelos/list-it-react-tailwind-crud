@@ -14,7 +14,7 @@ const NavBar = () => {
       <ul className="flex justify-between items-center gap-8 flex-wrap">
         <li>
           <a href="https://github.com/pauloesmelos/todolist-react-tailwind-crud" target="_blank"
-          className="text-neutral-950 font-light animate-pulse hover:scale-110 duration-500 hidden sm:block">
+          className="text-neutral-950 font-medium animate-pulse hover:scale-110 duration-500 hidden sm:block">
             Github
           </a>
         </li>

@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import FormAdd from './form/form-edit-todo/FormAdd';
 
-const ModalAddTodo = ({ value, onClick }) => {
+const ModalEditTodo = ({ value, onClick }) => {
  
   // anotar o relative, graças a ele o button ficou dentro da div branco do modal
   return (
@@ -22,4 +22,4 @@ const ModalAddTodo = ({ value, onClick }) => {
   )
 }
 
-export default ModalAddTodo;
+export default ModalEditTodo;

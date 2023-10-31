@@ -1,25 +1,26 @@
 import React from 'react';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import ButtonTodo from './components/app/ButtonTodo';
 import Card from './components/app/Card';
 import CurrentDate from './components/app/CurrentDate';
+import ModalAddTodo from './components/app/ModalAddTodo';
 import { GlobalContext } from './global/GlobalContext';
+import { GlobalModal } from './global/GlobalModal';
 import useTodoDataDelete from './hooks/useTodoDataDelete';
 import useTodoDataPut from './hooks/useTodoDataPut';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import ModalAddTodo from './components/app/ModalAddTodo';
 
 const App = () => {
   // tirando o overflow ao navegar da rota login p home
   document.querySelector('body').style.overflowY = "visible";
+
   // hooks - axios globalcontext state
   const { data, isLoading, refetch, error } = React.useContext(GlobalContext);
   const { mutate } = useTodoDataPut(refetch);
   const deleteData = useTodoDataDelete(refetch);
-  const [modal, setModal] = React.useState(false);
 
-  const modifierModal = () => {
-    setModal(state => !state);
-  }
+  // modal
+  const { modal, handleClick } = React.useContext(GlobalModal);
+
   const removeAll = () => {
     
   }
@@ -52,10 +53,10 @@ const App = () => {
         ))}
         <div className="flex gap-2 max-w-lg w-full justify-center sm:gap-0 sm:justify-between flex-wrap">
           <ButtonTodo text="Limpar Tarefas" type="remove" onClick={removeAll} />
-          <ButtonTodo text="Adicionar Tarefa" type="add" onClick={modifierModal} />
+          <ButtonTodo text="Adicionar Tarefa" type="add" onClick={handleClick} />
         </div>
       </div>
-      <ModalAddTodo isOpen={modal} setModal={setModal}/>
+      <ModalAddTodo value={modal} onClick={handleClick} />
     </>
   )
 }
