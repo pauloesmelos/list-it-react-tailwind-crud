@@ -76,7 +76,7 @@ const Form = () => {
             Login
             </button>
             { fail && 
-                <p className="text-red-600 text-xl mt-5">{fail}</p> 
+                <p className="text-red-600 text-xl text-center mt-5">{fail}</p> 
             }
         </form>
     </div>
