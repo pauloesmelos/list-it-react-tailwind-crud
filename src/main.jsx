@@ -10,6 +10,7 @@ import Error404 from './components/pages/Error404.jsx';
 import './css/tailwind.css';
 import { GlobalContextData } from './global/GlobalContext.jsx';
 import { GlobalModalProvider } from './global/GlobalModal.jsx';
+import { GlobobalModalEditProvider } from './global/GlobalModalEdit.jsx';
 
 const client = new QueryClient();
 
@@ -21,11 +22,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <GlobalContextData>
           <BrowserRouter>
             <GlobalModalProvider>
-              <Routes>
-                <Route path="/" element={<Page />} />
-                <Route path="/app" element={<App />} />
-                <Route path="*" element={<Error404 />} />
-              </Routes>
+              <GlobobalModalEditProvider>
+                <Routes>
+                  <Route path="/" element={<Page />} />
+                  <Route path="/app" element={<App />} />
+                  <Route path="*" element={<Error404 />} />
+                </Routes>
+              </GlobobalModalEditProvider>
             </GlobalModalProvider>
           </BrowserRouter>
         </GlobalContextData>
