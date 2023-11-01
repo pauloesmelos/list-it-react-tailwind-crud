@@ -14,11 +14,6 @@
       "id": 5,
       "title": "Ir no carro",
       "completed": false
-    },
-    {
-      "id": 6,
-      "title": "Ir no mercado",
-      "completed": false
     }
   ],
   "users": [

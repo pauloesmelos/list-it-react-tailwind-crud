@@ -19,6 +19,10 @@ export default {
         "from": { opacity: "0", transform: "scale(0)"},
         "to": { opacity: "1", transform: "scale(1)"}
       },
+      showCard: {
+        "from": { opacity: 0, transform: "translateX(10rem)"},
+        "to": { opacity: 1, transform: "translateX(0rem)"}
+      },
       hiddenMenuMobile: {
         "from": { transform: "translateX(0)"},
         "to": { transform: "translateX(-50rem)", visibility: "hidden"}
@@ -37,7 +41,8 @@ export default {
       loading: "loading 1s linear infinite",
       hiddenMenuMobile: "hiddenMenuMobile 1s forwards",
       showModal: "showModal .6s forwards",
-      rotate: "rotate .5s forwards"
+      rotate: "rotate .5s forwards",
+      showCard: "showCard .4s forwards"
     }
   },
   plugins: [

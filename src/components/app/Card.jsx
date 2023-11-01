@@ -4,7 +4,7 @@ import { FiCheck, FiDelete, FiEdit } from 'react-icons/fi';
 const Card = ({ userId, id, title, completed, checked, deleted }) => {
 
   return (
-    <div className={`p-4  my-2 text-neutral-950 font-light rounded-xl hover:scale-105 
+    <div className={`p-4  my-2 text-neutral-950 font-light rounded-xl hover:scale-105 animate-showCard
     hover:opacity-70 shadow-sm flex justify-between duration-300 ${completed ? "bg-green-300" : " bg-gray-200"}`}>
       <h2>{title}</h2>
       <div className="flex gap-5">
