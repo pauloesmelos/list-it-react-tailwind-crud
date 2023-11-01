@@ -2,8 +2,9 @@ import React from 'react';
 import { BiMenu } from 'react-icons/bi';
 import { GrClose } from 'react-icons/gr';
 import ButtonLogin from '../nav-bar/ButtonLogin';
+import ButtonLogout from '../nav-bar/ButtonLogout';
 
-const MobileMenu = () => {
+const MobileMenu = ({ type }) => {
   const [active, setActive] = React.useState(false);
   const handleClick = (event) => {
     setActive(true);
@@ -28,8 +29,11 @@ const MobileMenu = () => {
                 Github
             </a>
           </li>
-          <li className={`${active ? "block" : "hidden"}`}>
+          <li className={`${active && type === "login" ? "block" : "hidden"}`}>
             <ButtonLogin mobile={active} />
+          </li>
+          <li className={`${active && type === "logout" ? "block" : "hidden"}`}>
+            <ButtonLogout mobile={active} />
           </li>
         </div>
         <li className={`${active ? "block" : "hidden"}`}>

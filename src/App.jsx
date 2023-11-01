@@ -6,6 +6,8 @@ import CurrentDate from './components/app/CurrentDate';
 import ModalAddTodo from './components/app/ModalAddTodo';
 import Footer from './components/html/footer/Footer';
 import Head from './components/html/header/Head';
+import NavBar from './components/html/nav-bar/NavBar';
+import MenuMobile from './components/html/menu/MobileMenu';
 import { GlobalContext } from './global/GlobalContext';
 import { GlobalModal } from './global/GlobalModal';
 import useTodoDataDelete from './hooks/useTodoDataDelete';
@@ -36,10 +38,12 @@ const App = () => {
   return (
     <>
       <Head 
-        title="List It - Home"
+        title="List it - Home"
         contentKeywords="Home, List It, React, Github, Google"
         contentDescription="Home do List It"
       />
+      <NavBar type="logout"/>
+      <MenuMobile type="logout" />
       <CurrentDate />
       <div className="flex justify-center items-center flex-col w-full z-10">
         {data.map((e,i) => (

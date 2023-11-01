@@ -21,8 +21,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <GlobalContextData>
           <BrowserRouter>
             <GlobalModalProvider>
-              <NavBar/>
-              <MobileMenu/>
               <Routes>
                 <Route path="/" element={<Page />} />
                 <Route path="/app" element={<App />} />
