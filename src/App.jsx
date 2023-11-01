@@ -4,20 +4,22 @@ import ButtonTodo from './components/app/ButtonTodo';
 import Card from './components/app/Card';
 import CurrentDate from './components/app/CurrentDate';
 import ModalAddTodo from './components/app/ModalAddTodo';
-import Footer from './components/html/footer/Footer';
+import ModalEditTodo from './components/app/ModalEditTodo';
 import Head from './components/html/header/Head';
-import NavBar from './components/html/nav-bar/NavBar';
 import MenuMobile from './components/html/menu/MobileMenu';
+import NavBar from './components/html/nav-bar/NavBar';
 import { GlobalContext } from './global/GlobalContext';
 import { GlobalModal } from './global/GlobalModal';
+import { GlobalModalEdit } from './global/GlobalModalEdit';
 import useTodoDataDelete from './hooks/useTodoDataDelete';
 import useTodoDataPut from './hooks/useTodoDataPut';
-import ModalEditTodo from './components/app/ModalEditTodo';
-import { GlobalModalEdit } from './global/GlobalModalEdit';
 
 const App = () => {
   // tirando o overflow ao navegar da rota login p home
   document.querySelector('body').style.overflowY = "visible";
+  
+  const [idEdit, setIdEdit] = React.useState(0);
+  const [completedEdit, setCompletedEdit] = React.useState(false);
 
   // hooks - axios globalcontext state
   const { data, isLoading, refetch, error } = React.useContext(GlobalContext);
@@ -57,7 +59,11 @@ const App = () => {
               title={e.title}
               completed={e.completed}
               checked={() => mutate(e)}
-              edited={() => setValue(e => !e)}
+              edited={() => {
+                setValue(e => !e);
+                setIdEdit(e.id);
+                setCompletedEdit(e.completed);
+              }}
               deleted={() => deleteData.mutate(e)}
             />
           </div>
@@ -67,8 +73,7 @@ const App = () => {
         </div>
       </div>
       <ModalAddTodo value={modal} onClick={handleClick} />
-      <ModalEditTodo value={value} setValue={setValue} />
-      <Footer/>
+      <ModalEditTodo value={value} setValue={setValue} idEdit={idEdit} completedEdit={completedEdit} />
     </>
   )
 }

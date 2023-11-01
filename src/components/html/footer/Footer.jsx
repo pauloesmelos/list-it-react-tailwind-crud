@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="mt-52">
+    <footer className="fixed bottom-0 w-full">
       <div className="sm:flex hidden p-8 bg-white text-neutral-800 bottom-0 relative w-full justify-center
     gap-5 text-sm flex-wrap shadow-lg shadow-black">
         <p className="font-medium">&copy; 2023 Nenhum direito autoral reservado. Projeto pessoal</p>

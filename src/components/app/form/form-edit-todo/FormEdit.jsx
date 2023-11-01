@@ -1,12 +1,18 @@
 import React from 'react';
-import Input from '../input/Input';
+import useTodoData from '../../../../hooks/useTodoData';
+import useTodoPutTitle from '../../../../hooks/useTodoPutTitle';
 import ButtonTodo from '../../ButtonTodo';
-import useTodoDataPut from '../../../../hooks/useTodoDataPut';
+import Input from '../input/Input';
 
-const FormEdit = () => {
+const FormEdit = ({ idEdit,completedEdit, setValue }) => {
   const [title, setTitle] = React.useState('');
+  const { refetch } = useTodoData();
+  const { mutate } = useTodoPutTitle(refetch);
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const credentials = { idEdit, title, completedEdit};
+    mutate(credentials);
   }
 
   return (
@@ -24,6 +30,7 @@ const FormEdit = () => {
             type="edit"
             text="Editar Tarefa"
             attributes="w-full"
+            onClick={() => setValue(e => !e)}
         />
     </form>
   )

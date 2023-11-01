@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import FormEdit from './form/form-edit-todo/FormEdit';
 
-const ModalEditTodo = ({ value, setValue }) => {
+const ModalEditTodo = ({ value, setValue, idEdit, completedEdit }) => {
   // anotar o relative, graças a ele o button ficou dentro da div branco do modal
   return (
     <div className={`h-screen w-full bg-transparentModal fixed m-0 left-0 top-0 z-30
@@ -15,7 +15,7 @@ const ModalEditTodo = ({ value, setValue }) => {
                 md:text-4xl"
                 onClick={() => setValue(false)}
             />
-            <FormEdit />
+            <FormEdit idEdit={idEdit} completedEdit={completedEdit} setValue={setValue} />
         </div>
     </div>
   )

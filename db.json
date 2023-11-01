@@ -2,23 +2,23 @@
   "todos": [
     {
       "id": 1,
-      "title": "Ir caminhar",
-      "completed": false
+      "title": "Caminhada",
+      "completed": true
     },
     {
       "id": 2,
-      "title": "Ir correr",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "title": "Ir no carro",
+      "title": "Correr",
       "completed": false
     },
     {
       "id": 4,
-      "title": "Aula do Bressan",
+      "title": "Assistir o jogo",
       "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Sair com a namorada",
+      "completed": true
     }
   ],
   "users": [
