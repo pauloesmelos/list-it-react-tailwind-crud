@@ -18,8 +18,8 @@ const Form = () => {
 
   React.useEffect(() => {
     if(credentials) {
-        const { user, password } = credentials;
-        if(auth(user,password)) {
+        const { id, pass } = credentials;
+        if(auth(id,pass)) {
             navigate("/app");
             console.log('entrou');
         }

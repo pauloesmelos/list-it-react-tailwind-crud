@@ -12,6 +12,8 @@ import { GlobalContext } from './global/GlobalContext';
 import { GlobalModal } from './global/GlobalModal';
 import useTodoDataDelete from './hooks/useTodoDataDelete';
 import useTodoDataPut from './hooks/useTodoDataPut';
+import ModalEditTodo from './components/app/ModalEditTodo';
+import { GlobalModalEdit } from './global/GlobalModalEdit';
 
 const App = () => {
   // tirando o overflow ao navegar da rota login p home
@@ -24,6 +26,7 @@ const App = () => {
 
   // modal
   const { modal, handleClick } = React.useContext(GlobalModal);
+  const { value, setValue } = React.useContext(GlobalModalEdit);
 
   if(isLoading || !data) {
     return (
@@ -54,15 +57,17 @@ const App = () => {
               title={e.title}
               completed={e.completed}
               checked={() => mutate(e)}
+              edited={() => setValue(e => !e)}
               deleted={() => deleteData.mutate(e)}
             />
           </div>
         ))}
-        <div className="flex max-w-lg w-full justify-center flex-wrap">
+        <div className="flex max-w-lg w-full justify-center flex-wrap p-3">
           <ButtonTodo text="Adicionar Tarefa" type="add" onClick={handleClick} />
         </div>
       </div>
       <ModalAddTodo value={modal} onClick={handleClick} />
+      <ModalEditTodo value={value} setValue={setValue} />
       <Footer/>
     </>
   )

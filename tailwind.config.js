@@ -20,8 +20,8 @@ export default {
         "to": { opacity: "1", transform: "scale(1)"}
       },
       showCard: {
-        "from": { opacity: 0, transform: "translateX(10rem)"},
-        "to": { opacity: 1, transform: "translateX(0rem)"}
+        "from": { transform: "translateX(10rem)"},
+        "to": { transform: "translateX(0)", transform: "initial"}
       },
       hiddenMenuMobile: {
         "from": { transform: "translateX(0)"},
@@ -42,7 +42,7 @@ export default {
       hiddenMenuMobile: "hiddenMenuMobile 1s forwards",
       showModal: "showModal .6s forwards",
       rotate: "rotate .5s forwards",
-      showCard: "showCard .4s forwards"
+      showCard: "showCard 2s forwards"
     }
   },
   plugins: [

@@ -3,16 +3,16 @@ import { useCallback } from 'react';
 import { useMutation } from 'react-query';
 const URL = "http://localhost:3000/";
 
-const putData = async ({ userId, id, title, completed }) => {
-    completed = !completed;
-    
-    return axios.put(`${URL}todos/${id}`, {
-        userId,
-        id,
-        title,
-        completed
-    })
-    .then(response => response)
+const putData = async ({ userId, id, title, completed }) => { //type = edit title or edit state
+  completed = !completed;
+  return axios.put(`${URL}todos/${id}`, {
+      userId,
+      id,
+      title,
+      completed
+  })
+  .then(response => response)
+
 }
 const useTodoDataPut = (refetch) => {
   const put = useMutation({
