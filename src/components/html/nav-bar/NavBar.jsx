@@ -2,7 +2,8 @@ import React from 'react';
 import { BiSolidBookContent } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import ButtonLogin from './ButtonLogin';
-const NavBar = () => {
+import ButtonLogout from './ButtonLogout';
+const NavBar = ({ type }) => {
   return (
     <nav className="shadow-md bg-white md:flex justify-between w-full p-2 flex-wrap hidden">
       <div>
@@ -19,9 +20,14 @@ const NavBar = () => {
             Github
           </a>
         </li>
-        <li>
-          <ButtonLogin />
-        </li>
+        {type === "login" ? 
+          <li>
+            <ButtonLogin />
+          </li> :
+          <li>
+            <ButtonLogout />
+          </li>
+        }
       </ul>
     </nav>
   )
