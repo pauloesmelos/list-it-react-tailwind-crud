@@ -17,7 +17,7 @@ const ButtonTodo = ({ text, type, onClick, attributes }) => {
   else if(type === "add"){
     return(
       <button 
-        className={`bg-green-400 hover:bg-green-300 ${styleDefault}`}
+        className={`bg-green-400 hover:bg-green-300 w-full ${styleDefault}`}
         onClick={onClick}
       >
         {text}

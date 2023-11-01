@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useCallback } from 'react';
 import { useMutation } from 'react-query';
-const URL = "http://localhost:3000/";
 
+const URL = "http://localhost:3000/";
 const dataDelete = async ({ userId, id, title, completed }) => {
     return axios.delete(`${URL}todos/${id}`, 
     { userId, id, title, completed})
