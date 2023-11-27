@@ -35,6 +35,10 @@ O comando ```npx json-server --watch db.json``` inicia a simulação de uma DB, 
 - Vite
 
 ## ☕ Imagens.
+
+
+![Captura de tela 2023-11-01 205354](https://github.com/pauloesmelos/list-it-react-tailwind-crud/assets/74941958/bb011236-357c-4da1-8d41-6d4ce7343f3b)
+
 ![Captura de tela 2023-11-01 205225](https://github.com/pauloesmelos/list-it-react-tailwind-crud/assets/74941958/45aea2c7-044f-4ebe-a79d-be07317fb171)
 
 
