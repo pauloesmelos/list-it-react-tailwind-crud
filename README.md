@@ -31,6 +31,7 @@ O comando ```npx json-server --watch db.json``` inicia a simulação de uma DB, 
 - React Router Dom
 - Context API
 - React Query
+- Local Storage
 - Tailwind
 - Vite
 
